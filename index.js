@@ -140,10 +140,6 @@ client.on('message', async msg => {
       msg.reply(randomlove);
       break;
 
-    case 'i love you':
-      const randomlove = love[Math.floor(Math.random() * love.length)];
-      msg.reply(randomlove);
-      break;
   }
 
 })
