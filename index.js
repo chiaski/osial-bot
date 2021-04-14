@@ -111,6 +111,5 @@ client.on('message', async msg => {
   }
 })
 
-
 // client.login logs the bot in and sets it up for use. You'll enter your token here.
 client.login();
