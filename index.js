@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // Import discord.js and create the client
 const Discord = require('discord.js')
 const client = new Discord.Client();
