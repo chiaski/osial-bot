@@ -7,7 +7,7 @@ const client = new Discord.Client();
 // Register an event so that when the bot is ready, it will log a messsage to the terminal
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('with Moe', { type: 'PLAYING' });
+  client.user.setActivity('!khaenriah', { type: 'PLAYING' });
 })
 
 // I AM SORRY
@@ -49,9 +49,9 @@ const sourcesE = new Discord.MessageEmbed()
 
 
 const socialsE = new Discord.MessageEmbed()
-.setColor('#e342d3')
-.setTitle('<:osial:830785268461994024> OSIAL SAYS THIS IS KHAENRI\'AH')
-.setDescription(`We create content and archive Genshin lore. Follow us across our pages!\u200B \u200B 
+  .setColor('#e342d3')
+  .setTitle('<:osial:830785268461994024> OSIAL SAYS THIS IS KHAENRI\'AH')
+  .setDescription(`We create content and archive Genshin lore. Follow us across our pages!\u200B \u200B 
 
     :star: https://khaenriah.com · our website\u200B 
     :books: https://khaenriah.com/library · lore library\u200B 
@@ -59,29 +59,15 @@ const socialsE = new Discord.MessageEmbed()
     :bird: https://twitter.com/khaenriahcom · tweet tweet\u200B \u200B 
      \u200B 
     `)
-.setFooter('Love, Osial Overlord of the Vortex');
+  .setFooter('Love, Osial Overlord of the Vortex');
 
 
 // Register an event to handle incoming messages
 client.on('message', async msg => {
 
-  // actual useful commands
+  // so true
 
-  if (msg.content.includes("~library")) {
-    msg.channel.send(libraryE);
-  }
-
-  if (msg.content.includes("~socials")) {
-    msg.channel.send(socialsE);
-  }
-
-  if (msg.content.includes("~sources") || msg.content.includes("~ref")) {
-    msg.channel.send(sourcesE);
-  }
-
- // so true
-
-  if (msg.content.startsWith("so true")) {
+  if (msg.content.toLowerCase().startsWith("so true")) {
     msg.react('🇸')
       .then(() => msg.react('🇴'))
       .then(() => msg.react('🇹'))
@@ -91,26 +77,75 @@ client.on('message', async msg => {
       .catch(() => console.error('One of the emojis failed to react.'));
   }
 
-  // Check if the message starts with '!hello' and respond with 'world!' if it does.
-  if (msg.content.startsWith("~gm")) {
-    msg.reply("good morning baby. How has your morning been?");
-  } else if (msg.content.startsWith("~head")) {
-    msg.reply("the more heads to love you with.");
-  } else if (msg.content.startsWith("~moe")) {
-    const randommoe = moe[Math.floor(Math.random() * moe.length)];
-    msg.channel.send("", { files: [randommoe] });
-  } else if (msg.content.startsWith("~hug")) {
-    msg.reply("*hugs you tenderly with my five watery tendrils*");
-  } else if (msg.content.startsWith("~kiss")) {
-    msg.reply(" *kiss* *kiss* *kiss* *kiss* *kiss* –– each of the five heads gives you a lil smooch!");
-  } else if (msg.content.startsWith("~cook")) {
-    msg.reply(" hi baby. I've prepared some scrambled eggs for you. :)");
-  } else if (msg.content.startsWith("~i love you")) {
-    const randomlove = love[Math.floor(Math.random() * love.length)];
-    msg.reply(randomlove);
-  } else if (msg.content.startsWith("~aq") || msg.content.includes("~spoilers")) {
-    msg.channel.send(exampleEmbed)
+  // actual useful commands
+  let command = msg.content.toLowerCase().split(' ')[0].slice(1);
+
+  if (!msg.content.startsWith('~'))
+    return;
+
+  switch (command) {
+    case 'library':
+      msg.channel.send(libraryE);
+      break;
+
+    case 'socials':
+      msg.channel.send(socialsE);
+      break;
+
+    case 'sources':
+      msg.channel.send(sourcesE);
+      break;
+
+    case 'ref':
+      msg.channel.send(sourcesE);
+      break;
+
+    case 'spoiler':
+    case 'aq':
+    case 'spoilers':
+      msg.channel.send(exampleEmbed)
+      break;
   }
+
+  // meme 
+
+  switch (command) {
+    case 'gm':
+      msg.reply("good morning baby. How has your morning been?");
+      break;
+
+    case 'head':
+      msg.reply("the more heads to love you with.");
+      break;
+
+    case 'moe':
+      const randommoe = moe[Math.floor(Math.random() * moe.length)];
+      msg.channel.send("", { files: [randommoe] });
+      break;
+
+    case 'hug':
+      msg.reply("*hugs you tenderly with my five watery tendrils*");
+      break;
+
+    case 'kiss':
+      msg.reply(" *kiss* *kiss* *kiss* *kiss* *kiss* –– each of the five heads gives you a lil smooch!");
+      break;
+
+    case 'cook':
+      msg.reply(" hi baby. I've prepared some scrambled eggs for you. :)");
+      break;
+
+    case 'i love you':
+      const randomlove = love[Math.floor(Math.random() * love.length)];
+      msg.reply(randomlove);
+      break;
+
+    case 'i love you':
+      const randomlove = love[Math.floor(Math.random() * love.length)];
+      msg.reply(randomlove);
+      break;
+  }
+
 })
 
 // client.login logs the bot in and sets it up for use. You'll enter your token here.
