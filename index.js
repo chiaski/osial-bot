@@ -38,7 +38,7 @@ const libraryE = new Discord.MessageEmbed()
 const sourcesE = new Discord.MessageEmbed()
   .setColor('#e342d3')
   .setTitle('<:osial:830785268461994024> OSIAL SAYS WE HAVE RECOMMENDED SOURCES')
-  .setDescription(`Looking for quest logs, item descriptions, or other facts? Aside from bringing up your Archive, we have some recommended resources.over the internet. \u200B \u200B 
+  .setDescription(`Looking for quest logs, item descriptions, or other facts? Aside from bringing up your Archive, we have some recommended resources. \u200B \u200B 
 
       :star: https://genshin-impact.fandom.com/ (Descriptions/logs, not summaries) \u200B 
       Use \`[[Wiki Page Name]]\` (case-sensitive) to bring up Wiki pages.
