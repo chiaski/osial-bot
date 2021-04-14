@@ -8,7 +8,7 @@ client.on('ready', () => {
   client.user.setActivity('with Moe', { type: 'PLAYING' });
 })
 
-// I AM SO SO SO SO SO SORRY
+// I AM SO SO SO SO SO SO SORRY
 
 const moe = ["https://i.imgur.com/G06IKOL.png", "https://i.imgur.com/OWahzuf.png", "https://i.imgur.com/Ybl0ttp.png", "https://i.imgur.com/FsQVHW1.png", "https://i.imgur.com/T1Ru01p.png"]
 const love = ["I love you always, darling.", "I think I love you more and more each day.", "I love you, I love you, I love you, I love you, I love you! *(Each of the heads says I love you!)*", "you make every single day worth living.", "I love you so much more than my bullshit ex Zhongli. Don't even worry about him, baby."]
