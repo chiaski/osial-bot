@@ -105,6 +105,11 @@ client.on('message', async msg => {
     case 'spoilers':
       msg.channel.send(exampleEmbed)
       break;
+      
+    // FILES
+      
+    case 'visions':
+      msg.channel.send("Khaenri'ah's Visions Document: <https://www.notion.so/khaenriah/All-About-Visions-5e649279fe504dabbcb4bd267ed4f53a>");
   }
 
   // meme 
