@@ -110,6 +110,7 @@ client.on('message', async msg => {
       
     case 'visions':
       msg.channel.send("Khaenri'ah's Visions Document: <https://www.notion.so/khaenriah/All-About-Visions-5e649279fe504dabbcb4bd267ed4f53a>");
+      break;
   }
 
   // meme 
