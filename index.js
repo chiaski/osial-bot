@@ -86,7 +86,7 @@ const libraryAdding = new Discord.MessageEmbed()
     Please tag your theory accordingly. Theory means there's speculative and unconfirmed material, Analysis is objective (like translations, summaries), and Satire is for jokes!\u200B \u200B 
   
     **USAGE**\u200B 
-    \` ~addworld <Theory/Analysis/Satire> <Entry Title> <Entry Summary (Optional)> <Entry Link>\`\u200B 
+    \` ~<addworld/addcharacters> <Theory/Analysis/Satire> | <Entry Title> | <OPTIONAL: Entry Summary> | <Entry Link>\`\u200B 
 
 
      \u200B 
