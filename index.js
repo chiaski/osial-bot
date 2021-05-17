@@ -97,8 +97,8 @@ const libraryAdding = new Discord.MessageEmbed()
 const librarySuccess = new Discord.MessageEmbed()
   .setColor('#57ebde')
   .setTitle('<:osial:830785268461994024> OSIAL SAYS THANK YOU!')
-  .setDescription(`Osial has successfully added your entry to the Lore Libra
-ry!
+  .setDescription(`Osial has successfully added your entry to the Lore Library!
+
 \u200B Please wait for a contributor to clean things up...\u200B\u200B\u200B
 
   :books: https://khaenriah.com/library
