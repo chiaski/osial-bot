@@ -269,7 +269,7 @@ DiscordClient.on('message', async msg => {
         (async () => {
           const response = await client.pages.create({
             parent: {
-              database_id: "5a09576eb613458f992e91fbfb5c29b3"
+              database_id: "b75a49686d3544c19bf53fbad370df35"
             },
             properties: {
               Name: {
