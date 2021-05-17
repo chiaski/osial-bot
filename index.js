@@ -1,13 +1,22 @@
 require('dotenv').config()
+const {
+  Client
+} = require('@notionhq/client');
+
+const client = new Client({
+  auth: process.env.NOTION_TOKEN
+});
 
 // Import discord.js and create the client
 const Discord = require('discord.js')
-const client = new Discord.Client();
+const DiscordClient = new Discord.Client();
 
 // Register an event so that when the bot is ready, it will log a messsage to the terminal
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('!khaenriah', { type: 'PLAYING' });
+DiscordClient.on('ready', () => {
+  console.log(`Logged in as ${DiscordClient.user.tag}!`);
+  DiscordClient.user.setActivity('!khaenriah', {
+    type: 'PLAYING'
+  });
 })
 
 // I AM SORRY
@@ -62,8 +71,44 @@ const socialsE = new Discord.MessageEmbed()
   .setFooter('Love, Osial Overlord of the Vortex');
 
 
+const libraryAdding = new Discord.MessageEmbed()
+  .setColor('#e342d3')
+  .setTitle('<:osial:830785268461994024> OSIAL SAYS ADD TO THE LIBRARY')
+  .setDescription(`You can add to the Khaenri'ah Library with a Discord command. Our contributors will help tidy up the link after.\u200B \u200B 
+
+    :books: https://khaenriah.com/library · lore library\u200B 
+    
+    **DATABASES: WORLD & CHARACTERS**\u200B 
+    :globe_with_meridians: *WORLD* refers to general game theories, while *CHARACTERS* refer to playable/NPC character analyses, discoveries, etc.\u200B
+    Use ~addworld to add to the world database, and ~addcharacters for the character database.\u200B \u200B 
+    
+    **THEORY, ANALYSIS, SATIRE**\u200B  
+    Please tag your theory accordingly. Theory means there's speculative and unconfirmed material, Analysis is objective (like translations, summaries), and Satire is for jokes!\u200B \u200B 
+  
+    **USAGE**\u200B 
+    \` ~addworld <Theory/Analysis/Satire> <Entry Title> <Entry Summary (Optional)> <Entry Link>\`\u200B 
+
+
+     \u200B 
+    `)
+  .setFooter('Love, Osial Overlord of the Vortex');
+
+
+const librarySuccess = new Discord.MessageEmbed()
+  .setColor('#57ebde')
+  .setTitle('<:osial:830785268461994024> OSIAL SAYS THANK YOU!')
+  .setDescription(`Osial has successfully added your entry to the Lore Libra
+ry!
+\u200B Please wait for a contributor to clean things up...\u200B\u200B\u200B
+
+  :books: https://khaenriah.com/library
+     \u200B 
+    `)
+  .setFooter('Love, Osial Overlord of the Vortex');
+
+
 // Register an event to handle incoming messages
-client.on('message', async msg => {
+DiscordClient.on('message', async msg => {
 
   // so true
 
@@ -82,8 +127,180 @@ client.on('message', async msg => {
 
   if (!msg.content.startsWith('~'))
     return;
+  
+  var entry = "";
 
   switch (command) {
+
+    case 'libraryhelp':
+      msg.channel.send(libraryAdding);
+      break;
+
+    case 'addworld':
+
+      entry = (msg.content.substr(10)).split("|");
+
+      console.log(entry[0], entry[1], entry[2]);
+
+      if (entry.length == 4) {
+        (async () => {
+          const response = await client.pages.create({
+            parent: {
+              database_id: "5a09576eb613458f992e91fbfb5c29b3"
+            },
+            properties: {
+              Name: {
+                title: [
+                  {
+                    text: {
+                      content: entry[1]
+                    }
+              }
+            ]
+              },
+              Type: {
+                select: {
+                  name: entry[0].replace(/\s+/g, '')
+                }
+              },
+              Link: {
+                url: entry[3].replace(/\s+/g, '')
+              },
+              Summary: {
+                rich_text: [
+                  {
+                    text: {
+                      content: entry[2]
+                    }
+             }
+           ]
+              }
+            }
+          });
+          if(response.length != 0){
+            msg.channel.send(librarySuccess);
+          }
+        })();
+      } else if (entry.length == 3) {
+
+        (async () => {
+          const response = await client.pages.create({
+            parent: {
+              database_id: "5a09576eb613458f992e91fbfb5c29b3"
+            },
+            properties: {
+              Name: {
+                title: [
+                  {
+                    text: {
+                      content: entry[1]
+                    }
+              }
+            ]
+              },
+              Type: {
+                select: {
+                  name: entry[0].replace(/\s+/g, '')
+                }
+              },
+              Link: {
+                url: entry[2].replace(/\s+/g, '')
+              }
+            }
+          });
+          
+          if(response.length != 0){
+            msg.channel.send(librarySuccess);
+          }
+          
+        })();
+      }
+
+      break;
+
+    case 'addcharacters':
+
+      entry = (msg.content.substr(15)).split("|");
+
+      console.log(entry[0], entry[1], entry[2]);
+
+      if (entry.length == 4) {
+        (async () => {
+          const response = await client.pages.create({
+            parent: {
+              database_id: "b75a49686d3544c19bf53fbad370df35"
+            },
+            properties: {
+              Name: {
+                title: [
+                  {
+                    text: {
+                      content: entry[1]
+                    }
+              }
+            ]
+              },
+              Type: {
+                select: {
+                  name: entry[0].replace(/\s+/g, '')
+                }
+              },
+              Link: {
+                url: entry[3].replace(/\s+/g, '')
+              },
+              Summary: {
+                rich_text: [
+                  {
+                    text: {
+                      content: entry[2]
+                    }
+             }
+           ]
+              }
+            }
+          });
+          
+          if(response.length != 0){
+            msg.channel.send(librarySuccess);
+          }
+        })();
+      } else if (entry.length == 3) {
+
+        (async () => {
+          const response = await client.pages.create({
+            parent: {
+              database_id: "5a09576eb613458f992e91fbfb5c29b3"
+            },
+            properties: {
+              Name: {
+                title: [
+                  {
+                    text: {
+                      content: entry[1]
+                    }
+              }
+            ]
+              },
+              Type: {
+                select: {
+                  name: entry[0].replace(/\s+/g, '')
+                }
+              },
+              Link: {
+                url: entry[2].replace(/\s+/g, '')
+              }
+            }
+          });
+          
+          if(response.length != 0){
+            msg.channel.send(librarySuccess);
+          }
+        })();
+      }
+
+      break;
+
+
     case 'library':
       msg.channel.send(libraryE);
       break;
@@ -105,9 +322,9 @@ client.on('message', async msg => {
     case 'spoilers':
       msg.channel.send(exampleEmbed)
       break;
-      
-    // FILES
-      
+
+      // FILES
+
     case 'visions':
       msg.channel.send("Khaenri'ah's Visions Document: <https://www.notion.so/khaenriah/All-About-Visions-5e649279fe504dabbcb4bd267ed4f53a>");
       break;
@@ -126,7 +343,9 @@ client.on('message', async msg => {
 
     case 'moe':
       const randommoe = moe[Math.floor(Math.random() * moe.length)];
-      msg.channel.send("", { files: [randommoe] });
+      msg.channel.send("", {
+        files: [randommoe]
+      });
       break;
 
     case 'hug':
@@ -151,4 +370,4 @@ client.on('message', async msg => {
 })
 
 // client.login logs the bot in and sets it up for use. You'll enter your token here.
-client.login(process.env.DISCORD_TOKEN);
+DiscordClient.login(process.env.DISCORD_TOKEN);
