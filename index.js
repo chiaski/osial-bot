@@ -19,6 +19,9 @@ DiscordClient.on('ready', () => {
   });
 })
 
+  var entry = "";
+
+
 // I AM SORRY
 
 const moe = ["https://i.imgur.com/G06IKOL.png", "https://i.imgur.com/OWahzuf.png", "https://i.imgur.com/Ybl0ttp.png", "https://i.imgur.com/FsQVHW1.png", "https://i.imgur.com/T1Ru01p.png"]
@@ -99,7 +102,7 @@ const librarySuccess = new Discord.MessageEmbed()
   .setTitle('<:osial:830785268461994024> OSIAL SAYS THANK YOU!')
   .setDescription(`Osial has successfully added your entry to the Lore Library!
 
-\u200B Please wait for a contributor to clean things up...\u200B\u200B\u200B
+  \u200B Please wait for a contributor to clean things up...\u200B\u200B\u200B
 
   :books: https://khaenriah.com/library
      \u200B 
@@ -109,7 +112,6 @@ const librarySuccess = new Discord.MessageEmbed()
 
 // Register an event to handle incoming messages
 DiscordClient.on('message', async msg => {
-
   // so true
 
   if (msg.content.toLowerCase().startsWith("so true")) {
@@ -128,8 +130,6 @@ DiscordClient.on('message', async msg => {
   if (!msg.content.startsWith('~'))
     return;
   
-  var entry = "";
-
   switch (command) {
 
     case 'libraryhelp':
@@ -139,7 +139,7 @@ DiscordClient.on('message', async msg => {
     case 'addworld':
 
       entry = (msg.content.substr(10)).split("|");
-
+      msg.react('835319571371524107');
       console.log(entry[0], entry[1], entry[2]);
 
       if (entry.length == 4) {
@@ -178,7 +178,8 @@ DiscordClient.on('message', async msg => {
             }
           });
           if(response.length != 0){
-            msg.channel.send(librarySuccess);
+            msg.channel.send(librarySuccess).then(msg => msg.delete({timeout: 10000}));
+            
           }
         })();
       } else if (entry.length == 3) {
@@ -210,7 +211,8 @@ DiscordClient.on('message', async msg => {
           });
           
           if(response.length != 0){
-            msg.channel.send(librarySuccess);
+            msg.channel.send(librarySuccess).then(msg => msg.delete({timeout: 10000}));
+            
           }
           
         })();
@@ -262,6 +264,8 @@ DiscordClient.on('message', async msg => {
           
           if(response.length != 0){
             msg.channel.send(librarySuccess);
+            msg.channel.send(librarySuccess).then(msg => msg.delete({timeout: 10000}));
+            
           }
         })();
       } else if (entry.length == 3) {
@@ -293,7 +297,8 @@ DiscordClient.on('message', async msg => {
           });
           
           if(response.length != 0){
-            msg.channel.send(librarySuccess);
+           msg.channel.send(librarySuccess).then(msg => msg.delete({timeout: 10000}));
+            
           }
         })();
       }
