@@ -14,7 +14,7 @@ const DiscordClient = new Discord.Client();
 // Register an event so that when the bot is ready, it will log a messsage to the terminal
 DiscordClient.on('ready', () => {
   console.log(`Logged in as ${DiscordClient.user.tag}!`);
-  DiscordClient.user.setActivity('!khaenriah', {
+  DiscordClient.user.setActivity('with Lore', {
     type: 'PLAYING'
   });
 })
@@ -263,7 +263,6 @@ DiscordClient.on('message', async msg => {
           });
           
           if(response.length != 0){
-            msg.channel.send(librarySuccess);
             msg.channel.send(librarySuccess).then(msg => msg.delete({timeout: 10000}));
             
           }
