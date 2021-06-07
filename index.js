@@ -65,6 +65,92 @@ DiscordClient.on('message', async msg => {
       msg.channel.send(discord_embeds._libraryadding);
       break;
 
+    case 'search':
+      
+      // Testing if search works
+      entry = (msg.content.substr(8));
+      
+      const _query = entry.trim();
+      var _results = "";
+
+      (async () => {
+        const response = await client.databases.query({
+          database_id: "5a09576eb613458f992e91fbfb5c29b3",
+          filter: {
+            or: [
+              {
+                property: 'Tags',
+                multi_select: {
+                  contains: _query,
+                },
+              },
+            ],
+          },
+          page_size: 5
+        });
+
+        var entries = "";
+
+        if( (response.results).length != 0 ){
+          entries += "`WORLD`\n";
+        }
+
+        (response.results).forEach(function (item, index) {
+
+          entries += (" → " + item.properties.Name.title[0].plain_text + " | " + "<" +  item.properties.Link.url + ">" + "\n");
+
+        });
+        
+
+        if( (response.results).length != 0 ){
+          entries += "\n";
+          _results = _results.concat(entries);
+          msg.channel.send(entries);
+        }
+
+      })();
+
+      (async () => {
+        const response = await client.databases.query({
+          database_id: "b75a49686d3544c19bf53fbad370df35",
+          filter: {
+            or: [
+              {
+                property: 'Tags',
+                multi_select: {
+                  contains: _query,
+                },
+              },
+            ],
+          },
+          page_size: 5
+        });
+
+        var entries = "";
+
+        if( (response.results).length != 0 ){
+          entries += "`CHARACTERS`\n";
+        }
+
+        (response.results).forEach(function (item, index) {
+
+          entries += (" → " + item.properties.Name.title[0].plain_text + " | " + "<" +  item.properties.Link.url + ">" + "\n");
+
+        });
+
+        if( (response.results).length != 0 ){
+          entries += "\n";
+          _results = _results.concat(entries);
+          msg.channel.send(entries);
+    }
+
+      })();
+
+      msg.reply(_results);
+      console.log(_results);
+
+      break;
+
     case 'addworld':
 
       entry = (msg.content.substr(10)).split("|");
