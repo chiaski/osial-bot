@@ -86,18 +86,18 @@ DiscordClient.on('message', async msg => {
               },
             ],
           },
-          page_size: 5
+          page_size: 10
         });
 
         var entries = "";
 
         if( (response.results).length != 0 ){
-          entries += "`WORLD`\n";
+
         }
 
         (response.results).forEach(function (item, index) {
 
-          entries += (" → " + item.properties.Name.title[0].plain_text + " | " + "<" +  item.properties.Link.url + ">" + "\n");
+          entries += (" · [" + item.properties.Name.title[0].plain_text + "]" + "(" +  item.properties.Link.url + ")" + "\n");
 
         });
         
@@ -105,7 +105,15 @@ DiscordClient.on('message', async msg => {
         if( (response.results).length != 0 ){
           entries += "\n";
           _results = _results.concat(entries);
-          msg.channel.send(entries);
+          
+          const e = new Discord.MessageEmbed()
+          .setColor('#e342d3')
+          .setTitle('WORLD')
+          .setDescription(entries)
+          .setThumbnail('https://cdn.discordapp.com/attachments/851140549411209237/857734184306475018/64.png')
+          .setFooter('See more at khaenriah.com/library');
+          
+          msg.channel.send(e);
         }
 
       })();
@@ -123,30 +131,33 @@ DiscordClient.on('message', async msg => {
               },
             ],
           },
-          page_size: 5
+          page_size: 10
         });
 
         var entries = "";
 
-        if( (response.results).length != 0 ){
-          entries += "`CHARACTERS`\n";
-        }
-
         (response.results).forEach(function (item, index) {
 
-          entries += (" → " + item.properties.Name.title[0].plain_text + " | " + "<" +  item.properties.Link.url + ">" + "\n");
+          entries += (" · [" + item.properties.Name.title[0].plain_text + "]" + "(" +  item.properties.Link.url + ")" + "\n");
 
         });
 
         if( (response.results).length != 0 ){
           entries += "\n";
           _results = _results.concat(entries);
-          msg.channel.send(entries);
-    }
+
+          const e = new Discord.MessageEmbed()
+          .setColor('#e342d3')
+          .setTitle('CHARACTERS')
+          .setDescription(entries)
+          .setThumbnail('https://cdn.discordapp.com/attachments/851140549411209237/857734184306475018/64.png')
+          .setFooter('See more at khaenriah.com/library');
+          
+          msg.channel.send(e);
+        }
 
       })();
 
-      msg.reply(_results);
       console.log(_results);
 
       break;
