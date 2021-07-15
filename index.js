@@ -428,6 +428,12 @@ DiscordClient.on('message', async msg => {
       msg.reply(randomlove);
       break;
 
+
+    case 'pat':
+      const randompat = discord_embeds._pat[Math.floor(Math.random() * (discord_embeds._pat).length)];
+      msg.reply(randompat);
+      break;
+
   }
 
 })
