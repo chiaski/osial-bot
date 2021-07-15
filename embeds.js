@@ -91,7 +91,7 @@ const librarySuccess = new Discord.MessageEmbed()
 
 const moe = ["https://i.imgur.com/G06IKOL.png", "https://i.imgur.com/OWahzuf.png", "https://i.imgur.com/Ybl0ttp.png", "https://i.imgur.com/FsQVHW1.png", "https://i.imgur.com/T1Ru01p.png"]
 const love = ["I love you always, darling.", "I think I love you more and more each day.", "I love you, I love you, I love you, I love you, I love you! *(Each of the heads says I love you!)*", "you make every single day worth living.", "I love you so much more than my bullshit ex Zhongli. Don't even worry about him, baby."]
-const pat = ["<:osial:830785268461994024> Osial Head #1 *snarls* at you!", "<:osial:830785268461994024> Osial Head #2 *puurrrs* at you!", "<:osial:830785268461994024> Osial Head #3 *yaaaawns*", "<:osial:830785268461994024> Osial Head #4's leg begins to *twitch*", "<:osial:830785268461994024> Osial Head #4's leg begins to *twitch* **uncontrollably** ", "<:osial:830785268461994024> Osial Head #5  leg pushes their head against your hand... :flushed:"]
+const pat = ["<:osial:830785268461994024> Osial Head #1 *snarls* at you!", "<:osial:830785268461994024> Osial Head #2 *puurrrs* at you!", "<:osial:830785268461994024> Osial Head #3 *yaaaawns*", "<:osial:830785268461994024> Osial Head #4's leg begins to *twitch*", "<:osial:830785268461994024> Osial Head #4's leg begins to *twitch* **uncontrollably** ", "<:osial:830785268461994024> Osial Head #5 pushes their head against your hand... :flushed:"]
 
 
 exports._library = _library;
