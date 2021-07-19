@@ -62,7 +62,7 @@ DiscordClient.on('message', async msg => {
       .setTitle(msg.author.username)
       .setThumbnail(msg.author.avatarURL())
       .setDescription(copymsg)
-      .setFooter('Submitted from #theorists·feed');
+      .setFooter('Submitted from #theorists·submit');
 
     // send to lore feed channel
     DiscordClient.channels.cache.get('866474611587809351').send(_copyembed);  
