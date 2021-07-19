@@ -53,8 +53,27 @@ DiscordClient.on('message', async msg => {
       .catch(() => console.error('One of the emojis failed to react.'));
   }
 
+  // LORE FEED
+  if(msg.channel.id === '866560628944535563'){
+    var copymsg = msg.content.toString();
+
+    const _copyembed = new Discord.MessageEmbed()
+      .setColor("#FF5BEF")
+      .setTitle(msg.author.username)
+      .setThumbnail(msg.author.avatarURL())
+      .setDescription(copymsg)
+      .setFooter('Submitted from #theorists·feed');
+
+    // send to lore feed channel
+    DiscordClient.channels.cache.get('866474611587809351').send(_copyembed);  
+    return;  
+  }
+
+
   // actual useful commands
   let command = msg.content.toLowerCase().split(' ')[0].slice(1);
+
+  //command messages
 
   if (!msg.content.startsWith('~'))
     return;
@@ -391,6 +410,11 @@ DiscordClient.on('message', async msg => {
     case 'visions':
       msg.channel.send("Khaenri'ah's Visions Document: <https://www.notion.so/khaenriah/All-About-Visions-5e649279fe504dabbcb4bd267ed4f53a>");
       break;
+
+    case 'beginner':
+      msg.channel.send("Khaenri'ah's Beginner's Guide to Genshin Lore: https://khaenriah.com/beginners");
+      break;
+
   }
 
   // meme
@@ -427,7 +451,6 @@ DiscordClient.on('message', async msg => {
       const randomlove = discord_embeds._love[Math.floor(Math.random() * (discord_embeds._love).length)];
       msg.reply(randomlove);
       break;
-
 
     case 'pat':
       const randompat = discord_embeds._pat[Math.floor(Math.random() * (discord_embeds._pat).length)];
