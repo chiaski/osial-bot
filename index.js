@@ -28,8 +28,6 @@ const discord_embeds = require('./embeds');
 var entry = "";
 
 // I AM SORRY
-
-
 function validURL(str) {
   var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
     '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
@@ -391,7 +389,10 @@ DiscordClient.on('message', async msg => {
 
     case 'spoilers':
       msg.channel.send("<@&836063350882173018> <@&821568630873260112>");
-      msg.channel.send(discord_embeds._spoilers);
+      msg.channel.send(discord_embeds._spoilers).then(embedMessage => {
+        const url = embedMessage.url;
+        DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to prison: " + url);  
+      })
       break;
       
     case 'library':
