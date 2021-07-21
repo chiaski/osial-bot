@@ -390,6 +390,7 @@ DiscordClient.on('message', async msg => {
 
 
     case 'spoilers':
+      msg.channel.send("<@&836063350882173018> <@&821568630873260112>");
       msg.channel.send(discord_embeds._spoilers);
       break;
       
