@@ -389,6 +389,14 @@ DiscordClient.on('message', async msg => {
       break;
 
 
+    case 'spoilers':
+      msg.channel.send(discord_embeds._spoilers);
+      break;
+      
+    case 'library':
+      msg.channel.send(discord_embeds._library);
+      break;
+
     case 'library':
       msg.channel.send(discord_embeds._library);
       break;
