@@ -50,14 +50,14 @@ const _inazuma = new Discord.MessageEmbed()
 .setTitle('<:osial:830785268461994024> OSIAL IS DIRECTING YOU')
 .setDescription(`
 **Talking about Inazuma? Check these channels:**
-· <#868627223320612864> · Discussion, Reactions, Non-Lore
-· <#868627223320612864> · Builds, Team Comps, Non-Lore 
+· <#867444361678684202> · Discussion, Reactions, Non-Lore
+· <#823348012725698590> · Builds, Team Comps, Non-Lore 
 
 **For Lore:**
-· <#868627223320612864> · Questions and catch-all
-· <#868627223320612864> · Anything related to the Archon Quest
-· <#868627223320612864> · Speculating on Inazuma quest, plot, etc.
-· <#868627223320612864> · Lore discussion related to unreleased, datamined, leaked material.
+· <#864353686742237224> · Questions and catch-all
+· <#864354803228213299> · Anything related to the Archon Quest
+· <#864353347132719104> · Speculating on Inazuma quest, plot, etc.
+· <#864353410727149579> · Lore discussion related to unreleased, datamined, leaked material.
 `)
 .setFooter('Love, Osial Overlord of the Vortex');
 
