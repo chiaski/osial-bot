@@ -36,9 +36,28 @@ const _spoilers = new Discord.MessageEmbed()
 .setColor('#53FEB6')
 .setTitle('<:osial:830785268461994024> OSIAL SAYS NO SPOILERS')
 .setDescription(`Please respect those who cannot play through the update yet. Keep Inazuma discussion in the Inazuma Category or <#867444361678684202> channel.
-· *Any* form of commentary on quests **is not allowed** outside the right categories.
+[Review the full Khaenri'ah Leaks & Spoilers Policy here](https://docs.google.com/document/d/1pNVcwFMAPUOXL6jt_hq46_hrmNNqzUEGSqac6c0rWFg/edit?usp=sharing)
+· *Any* form of commentary on quests **is not allowed**.
+· If you want to avoid Inazuma spoilers or leaks, pick up the respective r
 · Delete the offending messages, or <@&836063350882173018> <@&821568630873260112> will for you.
 · Repeated infractions will send you to Osial's Prison.
+`)
+.setFooter('Love, Osial Overlord of the Vortex');
+
+
+const _inazuma = new Discord.MessageEmbed()
+.setColor('#53FEB6')
+.setTitle('<:osial:830785268461994024> OSIAL IS DIRECTING YOU')
+.setDescription(`
+**Talking about Inazuma? Check these channels:**
+· <#868627223320612864> · Discussion, Reactions, Non-Lore
+· <#868627223320612864> · Builds, Team Comps, Non-Lore 
+
+**For Lore:**
+· <#868627223320612864> · Questions and catch-all
+· <#868627223320612864> · Anything related to the Archon Quest
+· <#868627223320612864> · Speculating on Inazuma quest, plot, etc.
+· <#868627223320612864> · Lore discussion related to unreleased, datamined, leaked material.
 `)
 .setFooter('Love, Osial Overlord of the Vortex');
 
@@ -106,6 +125,7 @@ exports._librarysuccess = librarySuccess;
 
 exports._khaenriahsocials = _socials;
 exports._sources = _sources;
+exports._inazuma = _inazuma;
 
 exports._moe = moe;
 exports._love = love;

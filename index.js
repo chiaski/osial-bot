@@ -399,6 +399,10 @@ DiscordClient.on('message', async msg => {
       msg.channel.send(discord_embeds._library);
       break;
 
+    case 'inazuma':
+      msg.channel.send(discord_embeds._inazuma);
+      break;
+
     case 'library':
       msg.channel.send(discord_embeds._library);
       break;
@@ -432,6 +436,10 @@ DiscordClient.on('message', async msg => {
   switch (command) {
     case 'gm':
       msg.reply("good morning baby. How has your morning been?");
+      break;
+              
+    case 'gn':
+      msg.reply("*smooch smooch smooch smooch smooch* five smooches, one to tuck you in bed, one to bring you warmth, one for sweet dream, one to keep you safe and lastly one to make sure you sleep well!");
       break;
 
     case 'head':
