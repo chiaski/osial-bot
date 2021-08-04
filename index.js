@@ -38,6 +38,21 @@ function validURL(str) {
   return !!pattern.test(str);
 };
 
+// Check reactions
+DiscordClient.on('messageReactionAdd', (reaction, user) => {
+  let limit = 2; // number of thumbsdown reactions you need
+  if (reaction.emoji.id == '872368749997621308' && reaction.count >= limit){
+    reaction.message.delete();
+    reaction.message.channel.send("<@&836063350882173018> <@&821568630873260112>");
+    reaction.message.channel.send(discord_embeds._noleaks).then(embedMessage => {
+      const url = embedMessage.url;
+      DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to prison: " + url);  
+    })
+  }
+});
+
+
+// Check on message sent
 DiscordClient.on('message', async msg => {
   
   // so true

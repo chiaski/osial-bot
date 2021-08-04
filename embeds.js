@@ -44,6 +44,16 @@ const _spoilers = new Discord.MessageEmbed()
 `)
 .setFooter('Love, Osial Overlord of the Vortex');
 
+const _noleaks = new Discord.MessageEmbed()
+.setColor('#53FEB6')
+.setTitle('<:osial:830785268461994024> OSIAL SAYS NO LEAKS')
+.setDescription(`You **must** heavily spoiler tag leaks [with context](https://docs.google.com/document/d/1pNVcwFMAPUOXL6jt_hq46_hrmNNqzUEGSqac6c0rWFg/edit?usp=sharing). Discussion about leaked material should be strictly kept to the *many leaks channels we have available:*\n
+· <#864353410727149579> · Inazuma leaks\n
+· <#848883763810795580> · Lore leaks\n
+· <#797667857970233364> · General leaks & non-lore commentary\n
+`)
+.setFooter('Love, Osial Overlord of the Vortex');
+
 
 const _inazuma = new Discord.MessageEmbed()
 .setColor('#53FEB6')
@@ -118,6 +128,7 @@ const pat = ["<:osial:830785268461994024> Osial Head #1 *snarls* at you!", "<:os
 
 
 exports._spoilers = _spoilers;
+exports._noleaks = _noleaks;
 
 exports._library = _library;
 exports._libraryadding = libraryAdding;
