@@ -35,22 +35,21 @@ const _socials = new Discord.MessageEmbed()
 const _spoilers = new Discord.MessageEmbed()
 .setColor('#53FEB6')
 .setTitle('<:osial:830785268461994024> OSIAL SAYS NO SPOILERS')
-.setDescription(`Please respect those who cannot play through the update yet. Keep Inazuma discussion in the Inazuma Category or <#867444361678684202> channel.
+.setDescription(`Please respect those who cannot play through the update yet. Keep Sumeru discussion in the Sumeru Category or <#1009511353846857838> channel.
 [Review the full Khaenri'ah Leaks & Spoilers Policy here](https://docs.google.com/document/d/1pNVcwFMAPUOXL6jt_hq46_hrmNNqzUEGSqac6c0rWFg/edit?usp=sharing)
-· *Any* form of commentary on quests **is not allowed**.
-· If you want to avoid Inazuma spoilers or leaks, pick up the respective r
-· Delete the offending messages, or <@&836063350882173018> <@&821568630873260112> will for you.
+· *Any* form of commentary on current patch quests outside of their respective channels **is not allowed**.
 · Repeated infractions will send you to Osial's Prison.
+· If you want to avoid Sumeru spoilers or leaks, pick up the respective role in <#823444496146497556>.
 `)
 .setFooter('Love, Osial Overlord of the Vortex');
 
 const _noleaks = new Discord.MessageEmbed()
 .setColor('#53FEB6')
 .setTitle('<:osial:830785268461994024> OSIAL SAYS NO LEAKS')
-.setDescription(`You **must** heavily spoiler tag leaks [with context](https://docs.google.com/document/d/1pNVcwFMAPUOXL6jt_hq46_hrmNNqzUEGSqac6c0rWFg/edit?usp=sharing). Discussion about leaked material should be strictly kept to the *many leaks channels we have available:*\n
-· <#864353410727149579> · Inazuma leaks\n
-· <#848883763810795580> · Lore leaks\n
+.setDescription(`You **must** heavily spoiler tag leaks [with context](https://docs.google.com/document/d/1pNVcwFMAPUOXL6jt_hq46_hrmNNqzUEGSqac6c0rWFg/edit?usp=sharing). Discussion about leaked material should be strictly kept to the *leaks channels we have available:*\n
+· <#991117668147007508> · Just leaks, no discussion\n
 · <#797667857970233364> · General leaks & non-lore commentary\n
+· <#848883763810795580> · Lore discussions with and around leaked content\n
 `)
 .setFooter('Love, Osial Overlord of the Vortex');
 
