@@ -38,7 +38,7 @@ function validURL(str) {
   return !!pattern.test(str);
 };
 
-// Check reactions
+// Check reactions - NOLEAKS
 DiscordClient.on('messageReactionAdd', (reaction, user) => {
   let limit = 2; // number of thumbsdown reactions you need
   if (reaction.emoji.id == '872368749997621308' && reaction.count >= limit){
@@ -51,6 +51,18 @@ DiscordClient.on('messageReactionAdd', (reaction, user) => {
   }
 });
 
+// Check reactions - NOSPOILERS
+DiscordClient.on('messageReactionAdd', (reaction, user) => {
+  let limit = 2; // number of thumbsdown reactions you need
+  if (reaction.emoji.id == '1017068987441500230' && reaction.count >= limit){
+    reaction.message.delete();
+    reaction.message.channel.send("<@&836063350882173018> <@&821568630873260112>");
+    reaction.message.channel.send(discord_embeds._spoilers).then(embedMessage => {
+      const url = embedMessage.url;
+      DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to prison: " + url);  
+    })
+  }
+});
 
 // Check on message sent
 DiscordClient.on('message', async msg => {
@@ -401,7 +413,7 @@ DiscordClient.on('message', async msg => {
 
       break;
 
-
+/*
     case 'spoilers':
       msg.channel.send("<@&836063350882173018> <@&821568630873260112>");
       msg.channel.send(discord_embeds._spoilers).then(embedMessage => {
@@ -409,6 +421,7 @@ DiscordClient.on('message', async msg => {
         DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to prison: " + url);  
       })
       break;
+*/
       
     case 'library':
       msg.channel.send(discord_embeds._library);
@@ -496,4 +509,3 @@ DiscordClient.on('message', async msg => {
 
 // client.login logs the bot in and sets it up for use. You'll enter your token here.
 DiscordClient.login(process.env.DISCORD_TOKEN);
-
