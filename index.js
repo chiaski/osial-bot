@@ -420,8 +420,8 @@ DiscordClient.on('message', async msg => {
       msg.channel.send(discord_embeds._library);
       break;
 
-    case 'inazuma':
-      msg.channel.send(discord_embeds._inazuma);
+    case 'sumeru':
+      msg.channel.send(discord_embeds._sumeru);
       break;
 
     case 'library':

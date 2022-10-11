@@ -54,19 +54,35 @@ const _noleaks = new Discord.MessageEmbed()
 .setFooter('Love, Osial Overlord of the Vortex');
 
 
-const _inazuma = new Discord.MessageEmbed()
+// const _inazuma = new Discord.MessageEmbed()
+// .setColor('#53FEB6')
+// .setTitle('<:osial:830785268461994024> OSIAL IS DIRECTING YOU')
+// .setDescription(`
+// **Talking about Inazuma? Check these channels:**
+// · <#867444361678684202> · Discussion, Reactions, Non-Lore
+// · <#823348012725698590> · Builds, Team Comps, Non-Lore 
+
+// **For Lore:**
+// · <#864353686742237224> · Questions and catch-all
+// · <#864354803228213299> · Anything related to the Archon Quest
+// · <#864353347132719104> · Speculating on Inazuma quest, plot, etc.
+// · <#864353410727149579> · Lore discussion related to unreleased, datamined, leaked material.
+// `)
+// .setFooter('Love, Osial Overlord of the Vortex');
+
+const _sumeru = new Discord.MessageEmbed()
 .setColor('#53FEB6')
 .setTitle('<:osial:830785268461994024> OSIAL IS DIRECTING YOU')
 .setDescription(`
-**Talking about Inazuma? Check these channels:**
-· <#867444361678684202> · Discussion, Reactions, Non-Lore
-· <#823348012725698590> · Builds, Team Comps, Non-Lore 
+**Talking about Sumeru? Check these channels:**
+· <#1009511353846857838> · Discussion, Reactions, Non-Lore, Gameplay, World Quest Help
 
 **For Lore:**
-· <#864353686742237224> · Questions and catch-all
-· <#864354803228213299> · Anything related to the Archon Quest
-· <#864353347132719104> · Speculating on Inazuma quest, plot, etc.
-· <#864353410727149579> · Lore discussion related to unreleased, datamined, leaked material.
+· <#1009472951067885678> · Questions and catch-all
+· <#1009513186573176843> · Speculation
+· <#1009513117253902356> · World
+· <#1009513048668639242> · Characters
+· <#1009578904035524608> · Anything related to the Archon Quest
 `)
 .setFooter('Love, Osial Overlord of the Vortex');
 
@@ -135,7 +151,7 @@ exports._librarysuccess = librarySuccess;
 
 exports._khaenriahsocials = _socials;
 exports._sources = _sources;
-exports._inazuma = _inazuma;
+exports._sumeru = _sumeru;
 
 exports._moe = moe;
 exports._love = love;
