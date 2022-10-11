@@ -46,11 +46,17 @@ DiscordClient.on('messageReactionAdd', (reaction, user) => {
     reaction.message.channel.send("<@&836063350882173018> <@&821568630873260112>");
     reaction.message.channel.send(discord_embeds._noleaks).then(embedMessage => {
       const url = embedMessage.url;
-      DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to prison: " + url);  
+      DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to lore jail: " + url);  
+    })
+  } else if(reaction.emoji.id == 1017068987441500230 && reaction.count >= limit){
+    reaction.message.delete();
+    reaction.message.channel.send(discord_embeds._spoilers).then(embedMessage => {
+      const url = embedMessage.url;
+      DiscordClient.channels.cache.get('836320566800547881').send("Uh oh, that's a spoiler: " + url);  
     })
   }
-});
 
+});
 
 // Check on message sent
 DiscordClient.on('message', async msg => {
@@ -406,7 +412,7 @@ DiscordClient.on('message', async msg => {
       msg.channel.send("<@&836063350882173018> <@&821568630873260112>");
       msg.channel.send(discord_embeds._spoilers).then(embedMessage => {
         const url = embedMessage.url;
-        DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to prison: " + url);  
+        DiscordClient.channels.cache.get('836320566800547881').send("Time to send someone to lore jail: " + url);  
       })
       break;
       
